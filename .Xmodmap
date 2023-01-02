@@ -1,0 +1,6 @@
+clear control
+remove mod4 = Super_L
+
+keycode 133 = Alt_L
+
+add control = Control_R Control_L
