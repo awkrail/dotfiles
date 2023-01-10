@@ -14,9 +14,7 @@ cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
-set shiftround          
-" 補完時に大文字小文字を区別しない
-set infercase           
+set shiftround          " 補完時に大文字小文字を区別しない set infercase           
 " バッファを閉じる代わりに隠す（Undo履歴を残すため）
 set hidden              
 " 新しく開く代わりにすでに開いてあるバッファを開く
@@ -77,11 +75,9 @@ nnoremap g# g#zz
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" Ctrl + hjkl でウィンドウ間を移動
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" tabの移動
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 
 " Shift + 矢印でウィンドウサイズを変更
 nnoremap <S-Left>  <C-w><<CR>
@@ -126,8 +122,9 @@ call dein#add(s:dein_src)
 call dein#add('whatyouhide/vim-gotham')
 call dein#add('scrooloose/nerdtree')
 call dein#add('ervandew/supertab')
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
+call dein#add('itchyny/lightline.vim')
+call dein#add('ryanoasis/vim-devicons')
+call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 
 " Finish Dein initialization (required)
 call dein#end()
@@ -149,6 +146,13 @@ endif
 " call dein#install()
 "endif
 
+" nerdtree
+" 2回スペースを打つと消える
+nnoremap <Space><Space> :NERDTreeToggle<CR>
+let NERDTreeMapActivateNode='v'
+
 " color scheme should be written after dein.vim
 colorscheme gotham256
 
+" lightline
+set laststatus=2
