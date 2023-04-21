@@ -103,7 +103,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Language setting
-LANG=en_US.uft8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # neofetch
 neofetch
+
+export PATH=/usr/bin:$PATH
+#export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
+export PATH=$PATH:$HOME/bin/shell_prac
+
+# export QEMU_OPTS="-s -S"
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+
+# lynx
+export LYNX_CFG=~/.config/lynx/lynx.cfg

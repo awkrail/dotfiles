@@ -27,11 +27,11 @@ set matchtime=3
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
 
-" インデントをスペース2つにする
-set tabstop=2
+" インデントの設定
 set autoindent
-set expandtab
-set shiftwidth=2
+:set tabstop=8    " タブの表示幅を8に設定
+:set shiftwidth=8 " インデント幅を8に設定
+:set expandtab    " タブ文字をスペース文字に変換する設定
 
 " バックスペースでなんでも消せるようにする
 set backspace=indent,eol,start
@@ -99,6 +99,9 @@ cmap w!! w !sudo tee > /dev/null %
 " ファイルエンコーディング
 set encoding=utf-8
 
+" exit terminal on vim
+tnoremap <ESC> <C-w>:q!<CR>
+
 " Dein.vim
 " Ward off unexpected things that your distro might have made, as
 " well as sanely reset options when re-sourcing .vimrc
@@ -125,6 +128,8 @@ call dein#add('ervandew/supertab')
 call dein#add('itchyny/lightline.vim')
 call dein#add('ryanoasis/vim-devicons')
 call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('sheerun/vim-polyglot')
 
 " Finish Dein initialization (required)
 call dein#end()
@@ -141,18 +146,35 @@ if has('syntax')
   syntax on
 endif
 
-" Uncomment if you want to install not-installed plugins on startup.
-"if dein#check_install()
-" call dein#install()
-"endif
-
 " nerdtree
 " 2回スペースを打つと消える
 nnoremap <Space><Space> :NERDTreeToggle<CR>
 let NERDTreeMapActivateNode='v'
+autocmd vimenter * NERDTree
 
 " color scheme should be written after dein.vim
 colorscheme gotham256
 
 " lightline
 set laststatus=2
+
+" vim git
+set signcolumn=yes
+" update time
+set updatetime=100
+" disable default key mapping
+" override color
+augroup vimrc_vim_gitgutter
+  autocmd!
+  " sign column bg color
+  autocmd VimEnter,ColorScheme * highlight SignColumn guibg=bg ctermbg=bg
+
+  " sign column color
+  autocmd VimEnter,ColorScheme * highlight GitGutterAdd guifg=#000900 ctermfg=2
+  autocmd VimEnter,ColorScheme * highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+  autocmd VimEnter,ColorScheme * highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+augroup END
+let g:gitgutter_map_keys = 0
+
+" abbr
+abbr _sh #!/bin/bash
