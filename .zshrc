@@ -119,6 +119,3 @@ export PATH=$PATH:$HOME/bin/shell_prac
 # export QEMU_OPTS="-s -S"
 export GOROOT=/usr/local/go
 export PATH=$GOROOT/bin:$PATH
-
-# lynx
-export LYNX_CFG=~/.config/lynx/lynx.cfg
