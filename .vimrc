@@ -178,3 +178,4 @@ let g:gitgutter_map_keys = 0
 
 " abbr
 abbr _sh #!/bin/bash
+
