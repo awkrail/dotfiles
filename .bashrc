@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# change ${SHELL} to bash
+SHELL=/bin/bash
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -126,3 +129,13 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+
+# fuzzy finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# fbr - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}

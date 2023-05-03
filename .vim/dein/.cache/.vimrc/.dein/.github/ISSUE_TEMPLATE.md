@@ -1,24 +1,25 @@
-#### Requirements
+<!-- ISSUES NOT FOLLOWING THIS TEMPLATE WILL BE CLOSED AND DELETED -->
 
-<!-- ⚠️ !!! 
-If you are unsure what you are reporting is an issue or
-it's a general question please go to the gitter chat instead: https://gitter.im/ryanoasis/vim-devicons
-⚠️ !!! -->
+<!-- Check all that apply [x] -->
 
-#### Required Info
+- [ ] I have fzf 0.30.0 or above
+- [ ] I have read through https://github.com/junegunn/fzf.vim/blob/master/README.md
+- [ ] I have read through https://github.com/junegunn/fzf/blob/master/README-VIM.md
+- [ ] I have read through the manual page of fzf (`man fzf`)
+- [ ] I have searched through the existing issues
 
-<!-- ⚠️ !!! Issues not filled out with the template will be closed straight away and will only be responded to once filled properly ⚠️ !!! -->
+<!--
 
-- [ ] I have searched the [issues](https://github.com/ryanoasis/vim-devicons/issues) for my issue and found nothing related and/or helpful
-- [ ] I have read or at least glanced at the [FAQ](https://github.com/ryanoasis/vim-devicons/wiki/FAQ-&-Troubleshooting)
-- [ ] I have read or at least glanced at the [Wiki](https://github.com/ryanoasis/vim-devicons/wiki)
-- [ ] `VimDevIcons` is the last loaded vim plugin?
-- [ ] What **version** of vim are you using?
-  - hint: `vim --version`
-- [ ] What **font** are you using?
-- [ ] Are you using vim from the terminal or a GUI vim?
-- [ ] Are you using Mac, Linux or Windows?
+Before submitting
+=================
 
-#### Optional Info
+- Make sure that you have the latest version of fzf and fzf.vim
+- Check if your problem is reproducible with a minimal configuration
 
-- [ ] Provide **screenshots** where appropriate
+Start Vim with a minimal configuration
+======================================
+
+vim -Nu <(curl https://gist.githubusercontent.com/junegunn/6936bf79fedd3a079aeb1dd2f3c81ef5/raw)
+
+-->
+

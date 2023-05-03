@@ -1,17 +1,10 @@
 # dotfiles
 My dotfiles.
 
-#keybind
+# keybind
 ```
 sudo apt update
 sudo apt install xmodmap
-```
-
-# zsh
-```
-sudo apt update
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 # vim
@@ -20,3 +13,10 @@ sudo apt update
 sudo apt install vim-gtk3
 ```
 Then install Neobundle to install vim plugins.
+
+# fzf
+https://github.com/junegunn/fzf
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```

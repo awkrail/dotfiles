@@ -130,6 +130,8 @@ call dein#add('ryanoasis/vim-devicons')
 call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('sheerun/vim-polyglot')
+call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
 " Finish Dein initialization (required)
 call dein#end()
@@ -178,4 +180,3 @@ let g:gitgutter_map_keys = 0
 
 " abbr
 abbr _sh #!/bin/bash
-
